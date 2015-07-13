@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	    <title>Task Tracker 2.0</title>
+
+	    <link href="css/bootstrap.css" rel="stylesheet">
+	    <link href="css/taskTracker.css" rel="stylesheet">
+  	</head>
+  	<body>
+  		<!-- Container:START -->
+		<div class="container bg-lightgrey">
+	  		<div class="header col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+				<span class="title">Task Tracker</span><br/>
+				<span class="text-grey">v2.0</span>
+			</div>
+	    	<div class="left-col col-lg-6 col-md-6 col-sm-6 col-xs-12 bg-white">
+	    		<h3>Create a Task</h3>
+	    		<section class="item">
+	    			<span>Task Name</span>
+	      			<input id="newTaskName" type="text" class="rounded text-field bg-lightgrey"> 
+	    		</section>
+	    		<section class="item">
+	    			<span>Date</span>
+	      			<input id="newTaskDate" type="text" class="rounded text-field bg-lightgrey"> 
+	    		</section>
+	    		<section class="item">
+	    			<span>Assigned To</span>
+	      			<input id="newTaskAssigned" type="text" class="rounded text-field bg-lightgrey">
+	    		</section>
+	    		<section class="item">
+	    			<input id="submit" type="button" class="rounded btn" value="Submit">
+	    		</section>      
+	    	</div>
+	    	<div class="right-col col-lg-6 col-md-6 col-sm-6 col-xs-12 bg-white">
+				<h3>Existing Tasks</h3>
+				<section class="item">
+					<table class="table table-striped list">
+
+					</table>
+				</section>
+	    	</div>
+	  	</div>
+	  	<!-- Container:END -->
+	  	<script src="js/jquery.js"></script>
+		<script>
+			var tasks = [
+			{"name": "Test Task #1", "date": "12/01/2012", "assigned": "John Doe" },
+			{"name": "Test Task #2", "date": "12/02/2012", "assigned": "John Doe" },
+			{"name": "Test Task #3", "date": "12/03/2012", "assigned": "John Doe" },
+			{"name": "Test Task #4", "date": "12/04/2012", "assigned": "John Doe" },
+			{"name": "Test Task #5", "date": "12/05/2012", "assigned": "John Doe" },
+			{"name": "Test Task #6", "date": "12/06/2012", "assigned": "John Doe" },
+			{"name": "Test Task #7", "date": "12/07/2012", "assigned": "John Doe" }
+			];
+			function addTask() {
+				$(".table").empty();
+				tasks.push({"name":$("#newTaskName").val(),"date":$("#newTaskDate").val(),"assigned":$("#newTaskAssigned").val()});
+				renderTask();
+			}
+			function renderTask() {
+				if (tasks!=null && tasks!= "") {
+					for(var i=0; i<tasks.length; i++) {
+						$(".list").append('<tr><td><span>'+tasks[i].name+'</span></td><td><span class="text-grey">'+tasks[i].date+'</span></td><td><span>'+tasks[i].assigned+'</span></td></tr>');
+					}
+				}
+			}
+			$(document).ready(function(){
+				renderTask();
+			    $("#submit").click(function(){
+			    	addTask();
+				});
+			});
+
+		</script>
+
+  	</body>
+</html>

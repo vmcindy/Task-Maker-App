@@ -1,0 +1,81 @@
+input.rounded { 
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 8px 20px;
+
+}
+input.btn {
+	background-color: #555;
+	color: #FFFFFF;
+	font-size: 1.5em;
+	font-family: "Times New Roman", Georgia, Serif;
+}
+input.text-field {
+	width: 100%;
+}
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.container {
+	padding-left: 5px; 
+	padding-right: 5px;
+	padding-bottom: 40px; 
+	padding-top: 30px;
+}
+.header {
+	padding-left: 30px;
+}
+.right-col, .left-col {
+	padding-left: 30px; 
+	padding-right: 30px;
+	padding-bottom: 15px; 
+	padding-top: 15px;
+	border: 3px solid #EEEEEE;
+}
+.item {
+	padding-top: 11px;
+	padding-bottom: 11px;
+}
+.list {
+	border: 5px solid #DDDDDD;
+	border-radius: 5px;
+}
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: #EEEEEE;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #FFFFFF;
+}
+span {
+	font-weight: bold;
+	font-family: Arial, "Arial (Hebrew)", "David (Hebrew)";
+}
+span.title {
+	font-size: 2.5em;
+}
+h3, h4, .task-name {
+	font-weight: bold;
+	font-family: "Times New Roman", Georgia, Serif;
+}
+.bg-white {	background-color: #FFFFFF; }
+.bg-lightgrey {	background-color: #EEEEEE; }
+.text-grey { color: #999999; }
+.border-white {
+	border: 2px solid #FFFFFF;
+	border-radius: 1px;
+}
+@media (min-width: 900px) {
+  .container {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    margin: 0px 10px;
+  }
+}
+
+
+
